@@ -1,24 +1,32 @@
 # ISS
-Intelligent Self-driving System (ISS) is an autonomous driving framework for research. The code is tested on **Ubuntu 20.04**.
+智能自动驾驶系统（ISS）是一种用于研究的自动驾驶框架。该代码在 **Ubuntu 20.04** 上进行了测试。
 
 ## Installation
-Refer [here](Install/INSTALL.md) for installation instructions.
+参考 [安装](Install/INSTALL.md) 下的一些环境搭建命令。
 
 ## Usage
-If using ROS-Noetic, first build the workspace by
+要使用 ROS-Noetic, 首先构建ROS工作空间
 ```
 cd ros1_ws && catkin build
 source devel/setup.bash # or setup.zsh
 ```
-If using CARLA, first launch the CARLA server, then do
+打开 CARLA 服务器
+
+```
+cd carla-0.9.13
+./CarlaUE4.sh
+```
+
+启动 ros 节点，为智能驾驶车辆作全局路径规划
+
 ```
 roslaunch carla_bridge carla_demo.launch 
 ```
-If using Gazebo, do
+使用 Gazebo
 ```
 roslaunch robot_gazebo gazebo_demo.launch
 ```
-You can set the goal using RViz when running in Gazebo.
+使用 RViz 设置目标点。
 
 ## Documentation
 Refer [here](https://tis.ios.ac.cn/iss/) for the documentation.
